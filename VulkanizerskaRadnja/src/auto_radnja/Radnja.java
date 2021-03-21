@@ -26,9 +26,9 @@ public interface Radnja {
 	/**
 	 * Pronalazi i vraca listu objekata tipa AutoGuma koje imaju isti naziv (marku i model) kao i String parametar
 	 * 
-	 * @param markaModel String vrednosti preko koje se vrsi pretraga guma
+	 * @param markaModel AutoGuma preko cije vrednosti vrsimo pretragu
 	 * @return LinkedList Vraca listu objekata tipa AutoGuma
 	 */
-	LinkedList<AutoGuma> pronadjiGumu(String markaModel);
+	LinkedList<AutoGuma> pronadjiGumu(AutoGuma markaModel);
 
 }
