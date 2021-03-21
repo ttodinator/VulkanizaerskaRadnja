@@ -19,7 +19,6 @@ public class AutoGuma {
 	private String  markaModel=null;
 	/**
 	 * Precnik gume kao int vrednost
-	 * @throws
 	 */
 	private int precnik=-1;
 	/**
@@ -67,7 +66,7 @@ public class AutoGuma {
 	/**
 	 * Postavlja markaModel na novu vrednost
 	 * 
-	 * @param markaModel
+	 * @param markaModel parametar koji se odnosi na marku i model gume kao String
 	 * 
 	 * @throws java.lang.NullPointerException ako je uneta markaModel null
 	 * @throws java.lang.RuntimeException ako je uneta markaModel kraca od 3 znaka
@@ -92,7 +91,7 @@ public class AutoGuma {
 	 * Postavlja precnik gume na novu vrednost
 	 * 
 	 * 
-	 * @param precnik
+	 * @param precnik Precnik gume kao int vrednost
 	 * 
 	 * throws java.lang.RuntimException ako je unet prcnik manji od 13 ili veci od 22
 	 */
@@ -115,7 +114,7 @@ public class AutoGuma {
 	/**
 	 * Postavlja sirinu gume na novu vrednost
 	 * 
-	 * @param sirina
+	 * @param sirina Sirina gume kao int vrednost
 	 * 
 	 * @throws java.lang.RuntimeException ako je uneta sirina manja od 135 ili veca od 355
 	 */
@@ -138,7 +137,7 @@ public class AutoGuma {
 	/**
 	 * Postavlja visinu gume na novu vrednost
 	 * 
-	 * @param visina
+	 * @param visina Visina gume kao int vrednost
 	 * 
 	 * @throws java.lang.RuntimeException ako je uneta visina manje od 25 ili veca do 95
 	 */
