@@ -24,7 +24,7 @@ public abstract class VulkanizerskaRadnjaTest {
 	void testDodadjGumu() {
 		AutoGuma ag=new AutoGuma("Continental", 17, 255, 40);
 		radnja.dodajGumu(ag);
-		assertEquals(1, radnja.pronadjiGumu("Continental"));
+		assertEquals(1, radnja.pronadjiGumu("Continental").size());
 	}
 	
 	
