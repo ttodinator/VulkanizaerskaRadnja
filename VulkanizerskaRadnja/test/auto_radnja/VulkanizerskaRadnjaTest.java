@@ -10,9 +10,19 @@ import org.junit.jupiter.api.Test;
 
 import auto_radnja.gume.AutoGuma;
 
-public abstract class VulkanizerskaRadnjaTest {
+class VulkanizerskaRadnjaTest extends RadnjaTest{
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		radnja = new VulkanizerskaRadnja();
+	}
 
-	protected Radnja radnja;
+	@AfterEach
+	void tearDown() throws Exception {
+		radnja = null;
+	}
+
+	/*protected Radnja radnja;
 
 	@Test
 	void testDodajGumuNull() {
@@ -51,6 +61,6 @@ public abstract class VulkanizerskaRadnjaTest {
 		gume=radnja.pronadjiGumu("Continental");
 		assertEquals(0, gume.size());
 		
-	}
+	}*/
 
 }
