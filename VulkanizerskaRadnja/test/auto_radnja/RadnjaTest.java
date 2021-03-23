@@ -25,6 +25,7 @@ public abstract class RadnjaTest{
 		AutoGuma ag=new AutoGuma("Continental", 17, 255, 40);
 		radnja.dodajGumu(ag);
 		assertEquals(1, radnja.pronadjiGumu("Continental").size());
+		assertEquals(ag, radnja.pronadjiGumu("Continental").get(0));
 	}
 	
 	
@@ -39,19 +40,46 @@ public abstract class RadnjaTest{
 	
 	@Test
 	void testPronadjiGumuNull() {
-		assertThrows(java.lang.NullPointerException.class,()->radnja.dodajGumu(null) );
-		
+		LinkedList<AutoGuma> gume=radnja.pronadjiGumu(null);
+		assertNull(gume);
 	}
 	
-	void testPronadjiGumu() {
+	@Test
+	void testPronadjiGumuNemaGume() {
 		AutoGuma ag=new AutoGuma("Continental", 17, 255, 40);
-		AutoGuma ag1=new AutoGuma("Continental", 20, 255, 40);
 		radnja.dodajGumu(ag);
-		LinkedList<AutoGuma> gume=new LinkedList<AutoGuma>();
-		gume=radnja.pronadjiGumu("Continental");
+		LinkedList<AutoGuma> gume=radnja.pronadjiGumu("Continental1");
 		assertEquals(0, gume.size());
 		
 	}
+	
+	@Test
+	void testPronadjiGumuIatoImeRazliciteDimenzije() {
+		AutoGuma ag1=new AutoGuma("Continental", 17, 255, 40);
+		AutoGuma ag2=new AutoGuma("Continental", 18, 200, 42);
+		AutoGuma ag3=new AutoGuma("Continental", 19, 300, 46);
+		radnja.dodajGumu(ag1);
+		radnja.dodajGumu(ag2);
+		radnja.dodajGumu(ag3);
+		LinkedList<AutoGuma> gume=radnja.pronadjiGumu("Continental");
+		assertEquals(3, gume.size());
+		assertEquals(ag1, radnja.pronadjiGumu("Continental").get(2));
+		assertEquals(ag2, radnja.pronadjiGumu("Continental").get(1));
+		assertEquals(ag3, radnja.pronadjiGumu("Continental").get(0));
+	}
+	
+	@Test
+	void PronadjiGumu() {
+		AutoGuma ag1=new AutoGuma("Continental", 19, 300, 46);
+		radnja.dodajGumu(ag1);
+		AutoGuma ag2=new AutoGuma("Continental1", 19, 300, 46);
+		radnja.dodajGumu(ag2);
+		assertEquals(1, radnja.pronadjiGumu("Continental").size());
+		assertEquals(ag1, radnja.pronadjiGumu("Continental").get(0));
+		
+	}
+	
+	
 
 
 
