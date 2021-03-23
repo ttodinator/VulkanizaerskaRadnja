@@ -28,7 +28,7 @@ public class VulkanizerskaRadnja implements Radnja{
 	}
 
 	@Override
-	public LinkedList<AutoGuma> pronadjiGumu(AutoGuma markaModel) {
+	public LinkedList<AutoGuma> pronadjiGumu(String markaModel) {
 		if (markaModel == null)
 			return null;
 		LinkedList<AutoGuma> novaLista = new LinkedList<AutoGuma>();

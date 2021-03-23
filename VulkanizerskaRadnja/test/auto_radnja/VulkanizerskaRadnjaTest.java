@@ -24,7 +24,7 @@ public abstract class VulkanizerskaRadnjaTest {
 	void testDodadjFumu() {
 		AutoGuma ag=new AutoGuma("Continental", 17, 255, 40);
 		radnja.dodajGumu(ag);
-		assertEquals(1, radnja.pronadjiGumu(ag).size());
+		assertEquals(1, "Continental");
 	}
 	
 	
@@ -48,7 +48,7 @@ public abstract class VulkanizerskaRadnjaTest {
 		AutoGuma ag1=new AutoGuma("Continental", 20, 255, 40);
 		radnja.dodajGumu(ag);
 		LinkedList<AutoGuma> gume=new LinkedList<AutoGuma>();
-		gume=radnja.pronadjiGumu(ag1);
+		gume=radnja.pronadjiGumu("Continental");
 		assertEquals(0, gume.size());
 		
 	}
